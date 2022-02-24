@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="4" time="147.153146">
+<testcase classname="BigQuery sink - Validate BigQuery sink plugin error scenarios" name="Verify BigQuery Sink properties validation errors for mandatory fields" time="12.917039">
+<system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
+When Sink is BigQuery.......................................................passed
+Then Open BigQuery sink properties..........................................passed
+Then Enter the BigQuery properties with blank property "referenceName"......passed
+Then Validate mandatory property error for "referenceName"..................passed
+]]></system-out>
+</testcase>
+<testcase classname="BigQuery sink - Validate BigQuery sink plugin error scenarios" name="Verify BigQuery Sink properties validation errors for mandatory fields 2" time="11.421623">
+<system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
+When Sink is BigQuery.......................................................passed
+Then Open BigQuery sink properties..........................................passed
+Then Enter the BigQuery properties with blank property "dataset"............passed
+Then Validate mandatory property error for "dataset"........................passed
+]]></system-out>
+</testcase>
+<testcase classname="BigQuery sink - Validate BigQuery sink plugin error scenarios" name="Verify BigQuery Sink properties validation errors for mandatory fields 3" time="9.703792">
+<system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
+When Sink is BigQuery.......................................................passed
+Then Open BigQuery sink properties..........................................passed
+Then Enter the BigQuery properties with blank property "table"..............passed
+Then Validate mandatory property error for "table"..........................passed
+]]></system-out>
+</testcase>
+<testcase classname="BigQuery sink - Verification of GCS to BigQuery successful data transfer" name="Validate successful records transfer from GCS to BigQuery" time="113.110692">
+<system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
+When Source is GCS..........................................................passed
+When Sink is BigQuery.......................................................passed
+Then Open GCS source properties.............................................passed
+Then Enter the GCS source mandatory properties..............................passed
+Then Validate "GCS" plugin properties.......................................passed
+Then Close the GCS properties...............................................passed
+Then Open BigQuery sink properties..........................................passed
+Then Enter BigQuery property reference name.................................passed
+Then Enter BigQuery property projectId "projectId"..........................passed
+Then Enter BigQuery property datasetProjectId "projectId"...................passed
+Then Enter BigQuery property dataset "dataset"..............................passed
+Then Enter BigQuery sink property table name................................passed
+Then Enter BiqQuery property encryption key name "cmekBQ" if cmek is enabled.passed
+Then Toggle BigQuery sink property truncateTable to true....................passed
+Then Toggle BigQuery sink property updateTableSchema to true................passed
+Then Validate "BigQuery" plugin properties..................................passed
+Then Close the BigQuery properties..........................................passed
+Then Connect source as "GCS" and sink as "BigQuery" to establish connection.passed
+Then Save the pipeline......................................................passed
+Then Preview and run the pipeline...........................................passed
+Then Verify the preview of pipeline is "success"............................passed
+Then Close the preview......................................................passed
+Then Deploy the pipeline....................................................passed
+Then Run the Pipeline in Runtime............................................passed
+Then Wait till pipeline is in running state.................................passed
+Then Open and capture logs..................................................passed
+Then Verify the pipeline status is "Succeeded"..............................passed
+Then Get count of no of records transferred to target BigQuery Table........passed
+Then Validate the cmek key "cmekBQ" of target BigQuery table if cmek is enabled.passed
+]]></system-out>
+</testcase>
+</testsuite>
