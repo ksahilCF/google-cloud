@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="4" time="138.902017">
-<testcase classname="BigQuery sink - Validate BigQuery sink plugin error scenarios" name="Verify BigQuery Sink properties validation errors for mandatory fields" time="11.300358">
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="4" time="126.635362">
+<testcase classname="BigQuery sink - Validate BigQuery sink plugin error scenarios" name="Verify BigQuery Sink properties validation errors for mandatory fields" time="11.403008">
 <system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
 When Sink is BigQuery.......................................................passed
 Then Open BigQuery sink properties..........................................passed
@@ -8,7 +8,7 @@ Then Enter the BigQuery properties with blank property "referenceName"......pass
 Then Validate mandatory property error for "referenceName"..................passed
 ]]></system-out>
 </testcase>
-<testcase classname="BigQuery sink - Validate BigQuery sink plugin error scenarios" name="Verify BigQuery Sink properties validation errors for mandatory fields 2" time="8.525663">
+<testcase classname="BigQuery sink - Validate BigQuery sink plugin error scenarios" name="Verify BigQuery Sink properties validation errors for mandatory fields 2" time="8.345098">
 <system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
 When Sink is BigQuery.......................................................passed
 Then Open BigQuery sink properties..........................................passed
@@ -16,7 +16,7 @@ Then Enter the BigQuery properties with blank property "dataset"............pass
 Then Validate mandatory property error for "dataset"........................passed
 ]]></system-out>
 </testcase>
-<testcase classname="BigQuery sink - Validate BigQuery sink plugin error scenarios" name="Verify BigQuery Sink properties validation errors for mandatory fields 3" time="8.903163">
+<testcase classname="BigQuery sink - Validate BigQuery sink plugin error scenarios" name="Verify BigQuery Sink properties validation errors for mandatory fields 3" time="8.552839">
 <system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
 When Sink is BigQuery.......................................................passed
 Then Open BigQuery sink properties..........................................passed
@@ -24,7 +24,7 @@ Then Enter the BigQuery properties with blank property "table"..............pass
 Then Validate mandatory property error for "table"..........................passed
 ]]></system-out>
 </testcase>
-<testcase classname="BigQuery sink - Verification of GCS to BigQuery successful data transfer" name="Validate successful records transfer from GCS to BigQuery" time="110.172833">
+<testcase classname="BigQuery sink - Verification of GCS to BigQuery successful data transfer" name="Validate successful records transfer from GCS to BigQuery" time="98.334417">
 <system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
 When Source is GCS..........................................................passed
 When Sink is BigQuery.......................................................passed
