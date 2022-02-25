@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite failures="3" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="6" time="636.918006">
-<testcase classname="BigQuery sink - Verification of GCS to BigQuery successful data transfer" name="Validate successful records transfer from GCS to BigQuery" time="129.277874">
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="6" time="785.157023">
+<testcase classname="BigQuery sink - Verification of GCS to BigQuery successful data transfer" name="Validate successful records transfer from GCS to BigQuery" time="115.713237">
 <system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
 When Source is GCS..........................................................passed
 When Sink is BigQuery.......................................................passed
@@ -33,7 +33,7 @@ Then Get count of no of records transferred to target BigQuery Table........pass
 Then Validate the cmek key "cmekBQ" of target BigQuery table if cmek is enabled.passed
 ]]></system-out>
 </testcase>
-<testcase classname="BigQuery source - Verification of BigQuery to GCS successful data transfer" name="Validate successful records transfer from BigQuery to GCS" time="165.1173">
+<testcase classname="BigQuery source - Verification of BigQuery to GCS successful data transfer" name="Validate successful records transfer from BigQuery to GCS" time="117.715253">
 <system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
 When Source is BigQuery.....................................................passed
 When Sink is GCS............................................................passed
@@ -66,7 +66,7 @@ Then Verify the pipeline status is "Succeeded"..............................pass
 Then Verify data is transferred to target GCS bucket........................passed
 ]]></system-out>
 </testcase>
-<testcase classname="BigQuery source - Verification of BigQuery to Multiple sinks successful data transfer" name="Validate successful records transfer from BigQuery to multiple sinks (GCS, BigQuery and PubSub)" time="247.250937">
+<testcase classname="BigQuery source - Verification of BigQuery to Multiple sinks successful data transfer" name="Validate successful records transfer from BigQuery to multiple sinks (GCS, BigQuery and PubSub)" time="213.076314">
 <system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
 And Wait for page to render properly........................................passed
 When Source is BigQuery.....................................................passed
@@ -111,192 +111,103 @@ Then Validate the cmek key "cmekBQ" of target BigQuery table if cmek is enabled.
 Then Validate the cmek key "cmekPubSub" of target PubSub topic if cmek is enabled.passed
 ]]></system-out>
 </testcase>
-<testcase classname="GCS sink - Verification of GCS Sink plugin" name="To verify data is getting transferred successfully from BigQuery to GCS" time="36.454266">
-<failure message="org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;span class=&quot;fa fa-remove&quot;&gt;&lt;/span&gt; is not clickable at point (1889, 81). Other element would receive the click: &lt;div class=&quot;modal fade show&quot; role=&quot;dialog&quot; tabindex=&quot;-1&quot; style=&quot;display: block;&quot;&gt;...&lt;/div&gt;&#10;  (Session info: headless chrome=92.0.4515.159)&#10;Build info: version: '4.0.0-rc-1', revision: 'bc5511cbda'&#10;System info: host: 'runner-deployment-build-data-integrations-e2e-69959c6456-gbhfd', ip: '10.116.9.13', os.name: 'Linux', os.arch: 'amd64', os.version: '5.4.144+', java.version: '1.8.0_292'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [3286ef009eeebf0f37d3b57d72130a35, clickElement {id=db9c1fd0-7d0d-4b0b-8a50-27980793a9c1}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.159, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: /tmp/.com.google.Chrome.P7qUF8}, goog:chromeOptions: {debuggerAddress: localhost:37465}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:37465/devtoo..., se:cdpVersion: 92.0.4515.159, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Element: [[ChromeDriver: chrome on LINUX (3286ef009eeebf0f37d3b57d72130a35)] -&gt; xpath: //*[@class='fa fa-remove']]&#10;Session ID: 3286ef009eeebf0f37d3b57d72130a35&#10;&#9;at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)&#10;&#9;at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)&#10;&#9;at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)&#10;&#9;at java.lang.reflect.Constructor.newInstance(Constructor.java:423)&#10;&#9;at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)&#10;&#9;at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)&#10;&#9;at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)&#10;&#9;at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)&#10;&#9;at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)&#10;&#9;at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)&#10;&#9;at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)&#10;&#9;at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:251)&#10;&#9;at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)&#10;&#9;at sun.reflect.GeneratedMethodAccessor6.invoke(Unknown Source)&#10;&#9;at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#10;&#9;at java.lang.reflect.Method.invoke(Method.java:498)&#10;&#9;at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)&#10;&#9;at com.sun.proxy.$Proxy22.click(Unknown Source)&#10;&#9;at io.cdap.e2e.utils.SeleniumHelper.waitAndClick(SeleniumHelper.java:122)&#10;&#9;at io.cdap.e2e.utils.SeleniumHelper.waitAndClick(SeleniumHelper.java:126)&#10;&#9;at io.cdap.e2e.pages.actions.CdfStudioActions.clickCloseButton(CdfStudioActions.java:140)&#10;&#9;at io.cdap.plugin.bigquery.stepsdesign.BigQueryBase.closeTheBigQueryProperties(BigQueryBase.java:79)&#10;&#9;at ✽.Close the BigQuery properties(file:src/e2e-test/features/gcs/sink/GCSSink.feature:13)&#10;"><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
+<testcase classname="GCS sink - Verification of GCS Sink plugin" name="To verify data is getting transferred successfully from BigQuery to GCS" time="124.474172">
+<system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
 When Source is BigQuery.....................................................passed
 When Sink is GCS............................................................passed
 Then Connect source as "BigQuery" and sink as "GCS" to establish connection.passed
 Then Open BigQuery source properties........................................passed
 Then Enter the BigQuery source mandatory properties.........................passed
 Then Validate "BigQuery" plugin properties..................................passed
-Then Close the BigQuery properties..........................................failed
-Then Open GCS sink properties...............................................skipped
-Then Enter GCS property projectId and reference name........................skipped
-Then Enter GCS sink property path...........................................skipped
-Then Select GCS property format "csv".......................................skipped
-Then Enter GCS property encryption key name "cmekGCS" if cmek is enabled....skipped
-Then Validate "GCS" plugin properties.......................................skipped
-Then Close the GCS properties...............................................skipped
-Then Save the pipeline......................................................skipped
-Then Preview and run the pipeline...........................................skipped
-Then Verify the preview of pipeline is "success"............................skipped
-Then Close the preview......................................................skipped
-Then Deploy the pipeline....................................................skipped
-Then Run the Pipeline in Runtime............................................skipped
-Then Wait till pipeline is in running state.................................skipped
-Then Open and capture logs..................................................skipped
-Then Verify the pipeline status is "Succeeded"..............................skipped
-Then Verify data is transferred to target GCS bucket........................skipped
-Then Validate the cmek key "cmekGCS" of target GCS bucket if cmek is enabled.skipped
-
-StackTrace:
-org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <span class="fa fa-remove"></span> is not clickable at point (1889, 81). Other element would receive the click: <div class="modal fade show" role="dialog" tabindex="-1" style="display: block;">...</div>
-  (Session info: headless chrome=92.0.4515.159)
-Build info: version: '4.0.0-rc-1', revision: 'bc5511cbda'
-System info: host: 'runner-deployment-build-data-integrations-e2e-69959c6456-gbhfd', ip: '10.116.9.13', os.name: 'Linux', os.arch: 'amd64', os.version: '5.4.144+', java.version: '1.8.0_292'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [3286ef009eeebf0f37d3b57d72130a35, clickElement {id=db9c1fd0-7d0d-4b0b-8a50-27980793a9c1}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.159, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: /tmp/.com.google.Chrome.P7qUF8}, goog:chromeOptions: {debuggerAddress: localhost:37465}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:37465/devtoo..., se:cdpVersion: 92.0.4515.159, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on LINUX (3286ef009eeebf0f37d3b57d72130a35)] -> xpath: //*[@class='fa fa-remove']]
-Session ID: 3286ef009eeebf0f37d3b57d72130a35
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:251)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
-	at sun.reflect.GeneratedMethodAccessor6.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
-	at com.sun.proxy.$Proxy22.click(Unknown Source)
-	at io.cdap.e2e.utils.SeleniumHelper.waitAndClick(SeleniumHelper.java:122)
-	at io.cdap.e2e.utils.SeleniumHelper.waitAndClick(SeleniumHelper.java:126)
-	at io.cdap.e2e.pages.actions.CdfStudioActions.clickCloseButton(CdfStudioActions.java:140)
-	at io.cdap.plugin.bigquery.stepsdesign.BigQueryBase.closeTheBigQueryProperties(BigQueryBase.java:79)
-	at ✽.Close the BigQuery properties(file:src/e2e-test/features/gcs/sink/GCSSink.feature:13)
-]]></failure>
+Then Close the BigQuery properties..........................................passed
+Then Open GCS sink properties...............................................passed
+Then Enter GCS property projectId and reference name........................passed
+Then Enter GCS sink property path...........................................passed
+Then Select GCS property format "csv".......................................passed
+Then Enter GCS property encryption key name "cmekGCS" if cmek is enabled....passed
+Then Validate "GCS" plugin properties.......................................passed
+Then Close the GCS properties...............................................passed
+Then Save the pipeline......................................................passed
+Then Preview and run the pipeline...........................................passed
+Then Verify the preview of pipeline is "success"............................passed
+Then Close the preview......................................................passed
+Then Deploy the pipeline....................................................passed
+Then Run the Pipeline in Runtime............................................passed
+Then Wait till pipeline is in running state.................................passed
+Then Open and capture logs..................................................passed
+Then Verify the pipeline status is "Succeeded"..............................passed
+Then Verify data is transferred to target GCS bucket........................passed
+Then Validate the cmek key "cmekGCS" of target GCS bucket if cmek is enabled.passed
+]]></system-out>
 </testcase>
-<testcase classname="PubSub-Sink - Verification of BigQuery to PubSub successful data transfer" name="To verify data is getting transferred from BigQuery to PubSub successfully" time="56.980882">
-<failure message="org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@data-cy='plugin-BigQueryTable-batchsource']&quot;}&#10;  (Session info: headless chrome=92.0.4515.159)&#10;For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element&#10;Build info: version: '4.0.0-rc-1', revision: 'bc5511cbda'&#10;System info: host: 'runner-deployment-build-data-integrations-e2e-69959c6456-gbhfd', ip: '10.116.9.13', os.name: 'Linux', os.arch: 'amd64', os.version: '5.4.144+', java.version: '1.8.0_292'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [3286ef009eeebf0f37d3b57d72130a35, findElement {using=xpath, value=//*[@data-cy='plugin-BigQueryTable-batchsource']}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.159, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: /tmp/.com.google.Chrome.P7qUF8}, goog:chromeOptions: {debuggerAddress: localhost:37465}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:37465/devtoo..., se:cdpVersion: 92.0.4515.159, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 3286ef009eeebf0f37d3b57d72130a35&#10;&#9;at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)&#10;&#9;at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)&#10;&#9;at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)&#10;&#9;at java.lang.reflect.Constructor.newInstance(Constructor.java:423)&#10;&#9;at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)&#10;&#9;at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)&#10;&#9;at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)&#10;&#9;at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)&#10;&#9;at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)&#10;&#9;at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)&#10;&#9;at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)&#10;&#9;at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)&#10;&#9;at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)&#10;&#9;at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:381)&#10;&#9;at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:373)&#10;&#9;at io.cdap.e2e.utils.CdfHelper.selectSourcePlugin(CdfHelper.java:123)&#10;&#9;at io.cdap.plugin.bigquery.stepsdesign.BigQuerySource.sourceIsBigQuery(BigQuerySource.java:44)&#10;&#9;at ✽.Source is BigQuery(file:src/e2e-test/features/pubsub/sink/BQToPubSub.feature:7)&#10;"><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
-When Source is BigQuery.....................................................failed
-When Sink is PubSub.........................................................skipped
-Then Connect source as "BigQuery" and sink as "GooglePublisher" to establish connection.skipped
-Then Open BigQuery source properties........................................skipped
-Then Enter the BigQuery source mandatory properties.........................skipped
-Then Validate "BigQuery" plugin properties..................................skipped
-Then Close the BigQuery properties..........................................skipped
-Then Open the PubSub sink properties........................................skipped
-Then Enter PubSub property projectId "projectId"............................skipped
-Then Enter PubSub property reference name...................................skipped
-Then Enter PubSub sink property topic name..................................skipped
-Then Select PubSub property format "csv"....................................skipped
-Then Enter PubSub sink property encryption key name "cmekPubSub" if cmek is enabled.skipped
-Then Enter PubSub sink property MaximumBatchCount "pubSubMaximumBatchCount".skipped
-Then Enter PubSub sink property MaximumBatchSize "pubSubMaximumBatchSize"...skipped
-Then Enter PubSub sink property PublishDelayThreshold "pubSubPublishDelayThreshold".skipped
-Then Enter PubSub sink property RetryTimeOut "pubSubRetryTimeOut"...........skipped
-Then Enter PubSub sink property ErrorThreshold "pubSubErrorThreshold".......skipped
-Then Validate "PubSub" plugin properties....................................skipped
-Then Close the PubSub properties............................................skipped
-Then Save the pipeline......................................................skipped
-Then Preview and run the pipeline...........................................skipped
-Then Verify the preview of pipeline is "success"............................skipped
-Then Close the preview......................................................skipped
-Then Deploy the pipeline....................................................skipped
-Then Run the Pipeline in Runtime............................................skipped
-Then Wait till pipeline is in running state.................................skipped
-Then Verify the pipeline status is "Succeeded"..............................skipped
-Then Validate OUT record count is equal to IN record count..................skipped
-Then Open and capture logs..................................................skipped
-Then Validate the cmek key "cmekPubSub" of target PubSub topic if cmek is enabled.skipped
-
-StackTrace:
-org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@data-cy='plugin-BigQueryTable-batchsource']"}
-  (Session info: headless chrome=92.0.4515.159)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: '4.0.0-rc-1', revision: 'bc5511cbda'
-System info: host: 'runner-deployment-build-data-integrations-e2e-69959c6456-gbhfd', ip: '10.116.9.13', os.name: 'Linux', os.arch: 'amd64', os.version: '5.4.144+', java.version: '1.8.0_292'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [3286ef009eeebf0f37d3b57d72130a35, findElement {using=xpath, value=//*[@data-cy='plugin-BigQueryTable-batchsource']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.159, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: /tmp/.com.google.Chrome.P7qUF8}, goog:chromeOptions: {debuggerAddress: localhost:37465}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:37465/devtoo..., se:cdpVersion: 92.0.4515.159, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 3286ef009eeebf0f37d3b57d72130a35
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:381)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:373)
-	at io.cdap.e2e.utils.CdfHelper.selectSourcePlugin(CdfHelper.java:123)
-	at io.cdap.plugin.bigquery.stepsdesign.BigQuerySource.sourceIsBigQuery(BigQuerySource.java:44)
-	at ✽.Source is BigQuery(file:src/e2e-test/features/pubsub/sink/BQToPubSub.feature:7)
-]]></failure>
+<testcase classname="PubSub-Sink - Verification of BigQuery to PubSub successful data transfer" name="To verify data is getting transferred from BigQuery to PubSub successfully" time="125.461795">
+<system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
+When Source is BigQuery.....................................................passed
+When Sink is PubSub.........................................................passed
+Then Connect source as "BigQuery" and sink as "GooglePublisher" to establish connection.passed
+Then Open BigQuery source properties........................................passed
+Then Enter the BigQuery source mandatory properties.........................passed
+Then Validate "BigQuery" plugin properties..................................passed
+Then Close the BigQuery properties..........................................passed
+Then Open the PubSub sink properties........................................passed
+Then Enter PubSub property projectId "projectId"............................passed
+Then Enter PubSub property reference name...................................passed
+Then Enter PubSub sink property topic name..................................passed
+Then Select PubSub property format "csv"....................................passed
+Then Enter PubSub sink property encryption key name "cmekPubSub" if cmek is enabled.passed
+Then Enter PubSub sink property MaximumBatchCount "pubSubMaximumBatchCount".passed
+Then Enter PubSub sink property MaximumBatchSize "pubSubMaximumBatchSize"...passed
+Then Enter PubSub sink property PublishDelayThreshold "pubSubPublishDelayThreshold".passed
+Then Enter PubSub sink property RetryTimeOut "pubSubRetryTimeOut"...........passed
+Then Enter PubSub sink property ErrorThreshold "pubSubErrorThreshold".......passed
+Then Validate "PubSub" plugin properties....................................passed
+Then Close the PubSub properties............................................passed
+Then Save the pipeline......................................................passed
+Then Preview and run the pipeline...........................................passed
+Then Verify the preview of pipeline is "success"............................passed
+Then Close the preview......................................................passed
+Then Deploy the pipeline....................................................passed
+Then Run the Pipeline in Runtime............................................passed
+Then Wait till pipeline is in running state.................................passed
+Then Verify the pipeline status is "Succeeded"..............................passed
+Then Validate OUT record count is equal to IN record count..................passed
+Then Open and capture logs..................................................passed
+Then Validate the cmek key "cmekPubSub" of target PubSub topic if cmek is enabled.passed
+]]></system-out>
 </testcase>
-<testcase classname="PubSub-Sink - Verification of GCS to PubSub successful data transfer" name="To verify data is getting transferred from GCS to PubSub successfully" time="1.836747">
-<failure message="org.openqa.selenium.WebDriverException: unknown error: net::ERR_CONNECTION_REFUSED&#10;  (Session info: headless chrome=92.0.4515.159)&#10;Build info: version: '4.0.0-rc-1', revision: 'bc5511cbda'&#10;System info: host: 'runner-deployment-build-data-integrations-e2e-69959c6456-gbhfd', ip: '10.116.9.13', os.name: 'Linux', os.arch: 'amd64', os.version: '5.4.144+', java.version: '1.8.0_292'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [3286ef009eeebf0f37d3b57d72130a35, get {url=http://localhost:11011/pipelines/ns/default/studio}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.159, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: /tmp/.com.google.Chrome.P7qUF8}, goog:chromeOptions: {debuggerAddress: localhost:37465}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:37465/devtoo..., se:cdpVersion: 92.0.4515.159, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 3286ef009eeebf0f37d3b57d72130a35&#10;&#9;at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)&#10;&#9;at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)&#10;&#9;at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)&#10;&#9;at java.lang.reflect.Constructor.newInstance(Constructor.java:423)&#10;&#9;at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)&#10;&#9;at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)&#10;&#9;at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)&#10;&#9;at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)&#10;&#9;at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)&#10;&#9;at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)&#10;&#9;at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)&#10;&#9;at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:326)&#10;&#9;at io.cdap.e2e.utils.SeleniumDriver.openPage(SeleniumDriver.java:84)&#10;&#9;at io.cdap.e2e.utils.CdfHelper.openCdf(CdfHelper.java:48)&#10;&#9;at stepsdesign.PipelineSteps.openDatafusionProjectToConfigurePipeline(PipelineSteps.java:59)&#10;&#9;at ✽.Open Datafusion Project to configure pipeline(file:src/e2e-test/features/pubsub/sink/GCSToPubSub.feature:6)&#10;"><![CDATA[Given Open Datafusion Project to configure pipeline.........................failed
-When Source is GCS..........................................................skipped
-When Sink is PubSub.........................................................skipped
-Then Open GCS source properties.............................................skipped
-Then Enter the GCS source mandatory properties..............................skipped
-Then Validate "GCS" plugin properties.......................................skipped
-Then Close the GCS properties...............................................skipped
-Then Open the PubSub sink properties........................................skipped
-Then Enter PubSub property projectId "projectId"............................skipped
-Then Enter PubSub property reference name...................................skipped
-Then Enter PubSub sink property topic name..................................skipped
-Then Select PubSub property format "csv"....................................skipped
-Then Enter PubSub sink property encryption key name "cmekPubSub" if cmek is enabled.skipped
-Then Enter PubSub sink property MaximumBatchCount "pubSubMaximumBatchCount".skipped
-Then Enter PubSub sink property MaximumBatchSize "pubSubMaximumBatchSize"...skipped
-Then Enter PubSub sink property PublishDelayThreshold "pubSubPublishDelayThreshold".skipped
-Then Enter PubSub sink property RetryTimeOut "pubSubRetryTimeOut"...........skipped
-Then Enter PubSub sink property ErrorThreshold "pubSubErrorThreshold".......skipped
-Then Validate "PubSub" plugin properties....................................skipped
-Then Close the PubSub properties............................................skipped
-Then Connect source as "GCS" and sink as "GooglePublisher" to establish connection.skipped
-Then Save the pipeline......................................................skipped
-Then Preview and run the pipeline...........................................skipped
-Then Verify the preview of pipeline is "success"............................skipped
-Then Close the preview......................................................skipped
-Then Deploy the pipeline....................................................skipped
-Then Run the Pipeline in Runtime............................................skipped
-Then Wait till pipeline is in running state.................................skipped
-Then Verify the pipeline status is "Succeeded"..............................skipped
-Then Validate OUT record count is equal to IN record count..................skipped
-Then Open and capture logs..................................................skipped
-Then Validate the cmek key "cmekPubSub" of target PubSub topic if cmek is enabled.skipped
-
-StackTrace:
-org.openqa.selenium.WebDriverException: unknown error: net::ERR_CONNECTION_REFUSED
-  (Session info: headless chrome=92.0.4515.159)
-Build info: version: '4.0.0-rc-1', revision: 'bc5511cbda'
-System info: host: 'runner-deployment-build-data-integrations-e2e-69959c6456-gbhfd', ip: '10.116.9.13', os.name: 'Linux', os.arch: 'amd64', os.version: '5.4.144+', java.version: '1.8.0_292'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [3286ef009eeebf0f37d3b57d72130a35, get {url=http://localhost:11011/pipelines/ns/default/studio}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.159, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: /tmp/.com.google.Chrome.P7qUF8}, goog:chromeOptions: {debuggerAddress: localhost:37465}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:37465/devtoo..., se:cdpVersion: 92.0.4515.159, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 3286ef009eeebf0f37d3b57d72130a35
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:326)
-	at io.cdap.e2e.utils.SeleniumDriver.openPage(SeleniumDriver.java:84)
-	at io.cdap.e2e.utils.CdfHelper.openCdf(CdfHelper.java:48)
-	at stepsdesign.PipelineSteps.openDatafusionProjectToConfigurePipeline(PipelineSteps.java:59)
-	at ✽.Open Datafusion Project to configure pipeline(file:src/e2e-test/features/pubsub/sink/GCSToPubSub.feature:6)
-]]></failure>
+<testcase classname="PubSub-Sink - Verification of GCS to PubSub successful data transfer" name="To verify data is getting transferred from GCS to PubSub successfully" time="88.716252">
+<system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
+When Source is GCS..........................................................passed
+When Sink is PubSub.........................................................passed
+Then Open GCS source properties.............................................passed
+Then Enter the GCS source mandatory properties..............................passed
+Then Validate "GCS" plugin properties.......................................passed
+Then Close the GCS properties...............................................passed
+Then Open the PubSub sink properties........................................passed
+Then Enter PubSub property projectId "projectId"............................passed
+Then Enter PubSub property reference name...................................passed
+Then Enter PubSub sink property topic name..................................passed
+Then Select PubSub property format "csv"....................................passed
+Then Enter PubSub sink property encryption key name "cmekPubSub" if cmek is enabled.passed
+Then Enter PubSub sink property MaximumBatchCount "pubSubMaximumBatchCount".passed
+Then Enter PubSub sink property MaximumBatchSize "pubSubMaximumBatchSize"...passed
+Then Enter PubSub sink property PublishDelayThreshold "pubSubPublishDelayThreshold".passed
+Then Enter PubSub sink property RetryTimeOut "pubSubRetryTimeOut"...........passed
+Then Enter PubSub sink property ErrorThreshold "pubSubErrorThreshold".......passed
+Then Validate "PubSub" plugin properties....................................passed
+Then Close the PubSub properties............................................passed
+Then Connect source as "GCS" and sink as "GooglePublisher" to establish connection.passed
+Then Save the pipeline......................................................passed
+Then Preview and run the pipeline...........................................passed
+Then Verify the preview of pipeline is "success"............................passed
+Then Close the preview......................................................passed
+Then Deploy the pipeline....................................................passed
+Then Run the Pipeline in Runtime............................................passed
+Then Wait till pipeline is in running state.................................passed
+Then Verify the pipeline status is "Succeeded"..............................passed
+Then Validate OUT record count is equal to IN record count..................passed
+Then Open and capture logs..................................................passed
+Then Validate the cmek key "cmekPubSub" of target PubSub topic if cmek is enabled.passed
+]]></system-out>
 </testcase>
 </testsuite>
