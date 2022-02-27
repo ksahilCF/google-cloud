@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="19" time="754.602377">
+<testcase classname="GCS source - Verify GCS Source plugin error scenarios" name="Verify GCS Source properties validation errors for mandatory fields" time="7.631043">
+<system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
+When Source is GCS..........................................................passed
+Then Open GCS source properties.............................................passed
+Then Enter the GCS properties with blank property "referenceName"...........passed
+Then Validate mandatory property error for "referenceName"..................passed
+]]></system-out>
+</testcase>
+<testcase classname="GCS source - Verify GCS Source plugin error scenarios" name="Verify GCS Source properties validation errors for mandatory fields 2" time="9.850996">
+<system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
+When Source is GCS..........................................................passed
+Then Open GCS source properties.............................................passed
+Then Enter the GCS properties with blank property "path"....................passed
+Then Validate mandatory property error for "path"...........................passed
+]]></system-out>
+</testcase>
+<testcase classname="GCS source - Verify GCS Source plugin error scenarios" name="Verify GCS Source properties validation errors for mandatory fields 3" time="8.479661">
+<system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
+When Source is GCS..........................................................passed
+Then Open GCS source properties.............................................passed
+Then Enter the GCS properties with blank property "format"..................passed
+Then Validate mandatory property error for "format".........................passed
+]]></system-out>
+</testcase>
+<testcase classname="GCS source - Verify GCS Source plugin error scenarios" name="To verify Error message for invalid bucket name" time="10.072164">
+<system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
+When Source is GCS..........................................................passed
+Then Open GCS source properties.............................................passed
+Then Enter GCS property projectId and reference name........................passed
+Then Enter GCS property path "gcsInvalidBucketName".........................passed
+Then Select GCS property format "csv".......................................passed
+Then Verify invalid bucket name error message is displayed for bucket "gcsInvalidBucketName".passed
+]]></system-out>
+</testcase>
+<testcase classname="GCS source - Verify GCS Source plugin error scenarios" name="To verify Error message for incorrect output path field value" time="14.839825">
+<system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
+When Source is GCS..........................................................passed
+Then Open GCS source properties.............................................passed
+Then Enter GCS property projectId and reference name........................passed
+Then Enter GCS source property path "gcsOutputFieldTestFile"................passed
+Then Select GCS property format "csv".......................................passed
+Then Enter GCS source property path field "gcsInvalidPathField".............passed
+Then Verify Output Path field Error Message for incorrect path field "gcsInvalidPathField".passed
+]]></system-out>
+</testcase>
+<testcase classname="GCS source - Verify GCS Source plugin error scenarios" name="To verify Error for incorrect delimiter" time="14.560248">
+<system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
+When Source is GCS..........................................................passed
+Then Open GCS source properties.............................................passed
+Then Enter GCS property projectId and reference name........................passed
+Then Enter GCS source property path "gcsDelimitedFile"......................passed
+Then Select GCS property format "delimited".................................passed
+Then Enter GCS property delimiter "gcsIncorrectDelimiter"...................passed
+Then Toggle GCS source property skip header to true.........................passed
+Then Verify get schema fails with error.....................................passed
+]]></system-out>
+</testcase>
+<testcase classname="GCS source - Verify GCS Source plugin error scenarios" name="To verify Error for incorrect override field" time="16.11808">
+<system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
+When Source is GCS..........................................................passed
+Then Open GCS source properties.............................................passed
+Then Enter GCS property projectId and reference name........................passed
+Then Enter GCS source property path "gcsOutputFieldTestFile"................passed
+Then Select GCS property format "csv".......................................passed
+Then Enter GCS source property override field "gcsInvalidOverrideField" and data type "gcsOverrideDataType".passed
+Then Toggle GCS source property skip header to true.........................passed
+Then Verify get schema fails with error.....................................passed
+]]></system-out>
+</testcase>
+<testcase classname="GCS source - Verify GCS Source plugin error scenarios" name="To verify Pipeline preview gets failed for incorrect Regex-Path" time="49.906015">
+<system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
+When Source is GCS..........................................................passed
+When Sink is BigQuery.......................................................passed
+Then Connect source as "GCS" and sink as "BigQuery" to establish connection.passed
+Then Open GCS source properties.............................................passed
+Then Enter GCS property projectId and reference name........................passed
+Then Enter GCS source property path "gcsCsvFile"............................passed
+Then Select GCS property format "csv".......................................passed
+Then Enter GCS source property regex path filter "gcsIncorrectRegexPath"....passed
+Then Toggle GCS source property skip header to true.........................passed
+Then Validate output schema with expectedSchema "gcsCsvFileSchema"..........passed
+Then Validate "GCS" plugin properties.......................................passed
+Then Close the GCS properties...............................................passed
+Then Open BigQuery sink properties..........................................passed
+Then Enter the BigQuery sink mandatory properties...........................passed
+Then Validate "BigQuery" plugin properties..................................passed
+Then Close the BigQuery properties..........................................passed
+Then Save the pipeline......................................................passed
+Then Preview and run the pipeline...........................................passed
+Then Verify the preview of pipeline is "failed".............................passed
+]]></system-out>
+</testcase>
+<testcase classname="GCS source - Verification of GCS to BQ successful data transfer" name="To verify data is getting transferred from GCS to BigQuery with Mandatory fields" time="114.527619">
+<system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
+When Source is GCS..........................................................passed
+When Sink is BigQuery.......................................................passed
+Then Connect source as "GCS" and sink as "BigQuery" to establish connection.passed
+Then Open GCS source properties.............................................passed
+Then Enter GCS property projectId and reference name........................passed
+Then Enter GCS source property path "gcsCsvFile"............................passed
+Then Toggle GCS source property skip header to true.........................passed
+Then Select GCS property format "csv".......................................passed
+Then Validate output schema with expectedSchema "gcsCsvFileSchema"..........passed
+Then Validate "GCS" plugin properties.......................................passed
+Then Close the GCS properties...............................................passed
+Then Open BigQuery sink properties..........................................passed
+Then Enter the BigQuery sink mandatory properties...........................passed
+Then Validate "BigQuery" plugin properties..................................passed
+Then Close the BigQuery properties..........................................passed
+Then Save the pipeline......................................................passed
+Then Preview and run the pipeline...........................................passed
+Then Verify the preview of pipeline is "success"............................passed
+Then Click on preview data for BigQuery sink................................passed
+Then Verify preview output schema matches the outputSchema captured in properties.passed
+Then Close the preview data.................................................passed
+Then Deploy the pipeline....................................................passed
+Then Run the Pipeline in Runtime............................................passed
+Then Wait till pipeline is in running state.................................passed
+Then Open and capture logs..................................................passed
+Then Verify the pipeline status is "Succeeded"..............................passed
+Then Get count of no of records transferred to target BigQuery Table........passed
+]]></system-out>
+</testcase>
+<testcase classname="GCS source - Verification of GCS to BQ successful data transfer" name="To verify successful data transfer from GCS to BigQuery with outputField" time="83.833917">
+<system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
+When Source is GCS..........................................................passed
+When Sink is BigQuery.......................................................passed
+Then Connect source as "GCS" and sink as "BigQuery" to establish connection.passed
+Then Open GCS source properties.............................................passed
+Then Enter GCS property projectId and reference name........................passed
+Then Enter GCS source property path "gcsOutputFieldTestFile"................passed
+Then Select GCS property format "csv".......................................passed
+Then Enter GCS source property path field "gcsPathField"....................passed
+Then Toggle GCS source property skip header to true.........................passed
+Then Validate output schema with expectedSchema "gcsOutputFieldTestFileSchema".passed
+Then Validate "GCS" plugin properties.......................................passed
+Then Close the GCS properties...............................................passed
+Then Open BigQuery sink properties..........................................passed
+Then Enter the BigQuery sink mandatory properties...........................passed
+Then Validate "BigQuery" plugin properties..................................passed
+Then Close the BigQuery properties..........................................passed
+Then Save and Deploy Pipeline...............................................passed
+Then Run the Pipeline in Runtime............................................passed
+Then Wait till pipeline is in running state.................................passed
+Then Open and capture logs..................................................passed
+Then Verify the pipeline status is "Succeeded"..............................passed
+Then Get count of no of records transferred to target BigQuery Table........passed
+Then Verify output field "gcsPathField" in target BigQuery table contains path of the source GcsBucket "gcsOutputFieldTestFile".passed
+]]></system-out>
+</testcase>
+<testcase classname="GCS source - Verification of GCS to BQ successful data transfer" name="To verify Successful GCS to BigQuery data transfer with Datatype override" time="83.988623">
+<system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
+When Source is GCS..........................................................passed
+When Sink is BigQuery.......................................................passed
+Then Connect source as "GCS" and sink as "BigQuery" to establish connection.passed
+Then Open GCS source properties.............................................passed
+Then Enter GCS property projectId and reference name........................passed
+Then Enter GCS source property path "gcsOutputFieldTestFile"................passed
+Then Select GCS property format "csv".......................................passed
+Then Enter GCS source property override field "gcsOverrideField" and data type "gcsOverrideDataType".passed
+Then Toggle GCS source property skip header to true.........................passed
+Then Validate output schema with expectedSchema "gcsOverrideSchema".........passed
+Then Validate "GCS" plugin properties.......................................passed
+Then Close the GCS properties...............................................passed
+Then Open BigQuery sink properties..........................................passed
+Then Enter the BigQuery sink mandatory properties...........................passed
+Then Validate "BigQuery" plugin properties..................................passed
+Then Close the BigQuery properties..........................................passed
+Then Save and Deploy Pipeline...............................................passed
+Then Run the Pipeline in Runtime............................................passed
+Then Wait till pipeline is in running state.................................passed
+Then Open and capture logs..................................................passed
+Then Verify the pipeline status is "Succeeded"..............................passed
+Then Get count of no of records transferred to target BigQuery Table........passed
+Then Verify datatype of field "gcsOverrideField" is overridden to data type "gcsOverrideDataType" in target BigQuery table.passed
+]]></system-out>
+</testcase>
+<testcase classname="GCS source - Verification of GCS to BQ successful data transfer" name="To verify Successful GCS to BigQuery data transfer with Delimiter" time="82.103536">
+<system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
+When Source is GCS..........................................................passed
+When Sink is BigQuery.......................................................passed
+Then Connect source as "GCS" and sink as "BigQuery" to establish connection.passed
+Then Open GCS source properties.............................................passed
+Then Enter GCS property projectId and reference name........................passed
+Then Enter GCS source property path "gcsDelimitedFile"......................passed
+Then Select GCS property format "delimited".................................passed
+Then Enter GCS property delimiter "gcsDelimiter"............................passed
+Then Toggle GCS source property skip header to true.........................passed
+Then Validate output schema with expectedSchema "gcsDelimitedFileSchema"....passed
+Then Validate "GCS" plugin properties.......................................passed
+Then Close the GCS properties...............................................passed
+Then Open BigQuery sink properties..........................................passed
+Then Enter the BigQuery sink mandatory properties...........................passed
+Then Validate "BigQuery" plugin properties..................................passed
+Then Close the BigQuery properties..........................................passed
+Then Save and Deploy Pipeline...............................................passed
+Then Run the Pipeline in Runtime............................................passed
+Then Wait till pipeline is in running state.................................passed
+Then Open and capture logs..................................................passed
+Then Verify the pipeline status is "Succeeded"..............................passed
+Then Get count of no of records transferred to target BigQuery Table........passed
+]]></system-out>
+</testcase>
+<testcase classname="GCS source - Verification of GCS to BQ successful data transfer" name="To verify Successful GCS to BigQuery data transfer with blob file by entering MaxMinSplitSize" time="91.499757">
+<system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
+When Source is GCS..........................................................passed
+When Sink is BigQuery.......................................................passed
+Then Connect source as "GCS" and sink as "BigQuery" to establish connection.passed
+Then Open GCS source properties.............................................passed
+Then Enter GCS property projectId and reference name........................passed
+Then Enter GCS source property path "gcsBlobFile"...........................passed
+Then Select GCS property format "blob"......................................passed
+Then Enter GCS source property minimum split size "gcsMinSplitSize" and maximum split size "gcsMaxSplitSize".passed
+Then Toggle GCS source property skip header to true.........................passed
+Then Validate output schema with expectedSchema "gcsBlobFileSchema".........passed
+Then Validate "GCS" plugin properties.......................................passed
+Then Close the GCS properties...............................................passed
+Then Open BigQuery sink properties..........................................passed
+Then Enter the BigQuery sink mandatory properties...........................passed
+Then Validate "BigQuery" plugin properties..................................passed
+Then Close the BigQuery properties..........................................passed
+Then Save and Deploy Pipeline...............................................passed
+Then Run the Pipeline in Runtime............................................passed
+Then Wait till pipeline is in running state.................................passed
+Then Open and capture logs..................................................passed
+Then Verify the pipeline status is "Succeeded"..............................passed
+Then Get count of no of records transferred to target BigQuery Table........passed
+]]></system-out>
+</testcase>
+<testcase classname="GCS source - Verification of GCS to BQ successful data transfer" name="To verify Successful GCS to BigQuery data transfer using Regex path filter" time="83.389539">
+<system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
+When Source is GCS..........................................................passed
+When Sink is BigQuery.......................................................passed
+Then Connect source as "GCS" and sink as "BigQuery" to establish connection.passed
+Then Open GCS source properties.............................................passed
+Then Enter GCS property projectId and reference name........................passed
+Then Enter GCS source property path "gcsCsvFile"............................passed
+Then Select GCS property format "csv".......................................passed
+Then Enter GCS source property regex path filter "gcsRegexPathFilter".......passed
+Then Toggle GCS source property skip header to true.........................passed
+Then Validate output schema with expectedSchema "gcsCsvFileSchema"..........passed
+Then Validate "GCS" plugin properties.......................................passed
+Then Close the GCS properties...............................................passed
+Then Open BigQuery sink properties..........................................passed
+Then Enter the BigQuery sink mandatory properties...........................passed
+Then Validate "BigQuery" plugin properties..................................passed
+Then Close the BigQuery properties..........................................passed
+Then Save and Deploy Pipeline...............................................passed
+Then Run the Pipeline in Runtime............................................passed
+Then Wait till pipeline is in running state.................................passed
+Then Open and capture logs..................................................passed
+Then Verify the pipeline status is "Succeeded"..............................passed
+Then Get count of no of records transferred to target BigQuery Table........passed
+]]></system-out>
+</testcase>
+<testcase classname="GCS source - Validate GCS plugin output schema for different formats" name="GCS Source output schema validation" time="17.445379">
+<system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
+When Source is GCS..........................................................passed
+Then Open GCS source properties.............................................passed
+Then Enter GCS property projectId and reference name........................passed
+Then Enter GCS source property path "gcsCsvFile"............................passed
+Then Select GCS property format "csv".......................................passed
+Then Toggle GCS source property skip header to true.........................passed
+Then Validate output schema with expectedSchema "gcsCsvFileSchema"..........passed
+]]></system-out>
+</testcase>
+<testcase classname="GCS source - Validate GCS plugin output schema for different formats" name="GCS Source output schema validation 2" time="16.578253">
+<system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
+When Source is GCS..........................................................passed
+Then Open GCS source properties.............................................passed
+Then Enter GCS property projectId and reference name........................passed
+Then Enter GCS source property path "gcsTsvFile"............................passed
+Then Select GCS property format "tsv".......................................passed
+Then Toggle GCS source property skip header to true.........................passed
+Then Validate output schema with expectedSchema "gcsTsvFileSchema"..........passed
+]]></system-out>
+</testcase>
+<testcase classname="GCS source - Validate GCS plugin output schema for different formats" name="GCS Source output schema validation 3" time="16.092416">
+<system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
+When Source is GCS..........................................................passed
+Then Open GCS source properties.............................................passed
+Then Enter GCS property projectId and reference name........................passed
+Then Enter GCS source property path "gcsBlobFile"...........................passed
+Then Select GCS property format "blob"......................................passed
+Then Toggle GCS source property skip header to true.........................passed
+Then Validate output schema with expectedSchema "gcsBlobFileSchema".........passed
+]]></system-out>
+</testcase>
+<testcase classname="GCS source - Validate GCS plugin output schema for different formats" name="GCS Source output schema validation for delimited files" time="17.682755">
+<system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
+When Source is GCS..........................................................passed
+Then Open GCS source properties.............................................passed
+Then Enter GCS property projectId and reference name........................passed
+Then Enter GCS source property path "gcsDelimitedFile"......................passed
+Then Select GCS property format "delimited".................................passed
+Then Enter GCS property delimiter "gcsDelimiter"............................passed
+Then Toggle GCS source property skip header to true.........................passed
+Then Validate output schema with expectedSchema "gcsDelimitedFileSchema"....passed
+]]></system-out>
+</testcase>
+<testcase classname="GCS source - Validate GCS plugin output schema for different formats" name="GCS Source output schema validation for delimited files 2" time="16.002551">
+<system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
+When Source is GCS..........................................................passed
+Then Open GCS source properties.............................................passed
+Then Enter GCS property projectId and reference name........................passed
+Then Enter GCS source property path "gcsTextFile"...........................passed
+Then Select GCS property format "text"......................................passed
+Then Enter GCS property delimiter "gcsDelimiter"............................passed
+Then Toggle GCS source property skip header to true.........................passed
+Then Validate output schema with expectedSchema "gcsTextFileSchema".........passed
+]]></system-out>
+</testcase>
+</testsuite>

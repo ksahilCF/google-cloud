@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="6" time="767.285559">
+<testcase classname="BigQuery sink - Verification of GCS to BigQuery successful data transfer" name="Validate successful records transfer from GCS to BigQuery" time="106.203167">
+<system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
+When Source is GCS..........................................................passed
+When Sink is BigQuery.......................................................passed
+Then Open GCS source properties.............................................passed
+Then Enter the GCS source mandatory properties..............................passed
+Then Validate "GCS" plugin properties.......................................passed
+Then Close the GCS properties...............................................passed
+Then Open BigQuery sink properties..........................................passed
+Then Enter BigQuery property reference name.................................passed
+Then Enter BigQuery property projectId "projectId"..........................passed
+Then Enter BigQuery property datasetProjectId "projectId"...................passed
+Then Enter BigQuery property dataset "dataset"..............................passed
+Then Enter BigQuery sink property table name................................passed
+Then Enter BiqQuery property encryption key name "cmekBQ" if cmek is enabled.passed
+Then Toggle BigQuery sink property truncateTable to true....................passed
+Then Toggle BigQuery sink property updateTableSchema to true................passed
+Then Validate "BigQuery" plugin properties..................................passed
+Then Close the BigQuery properties..........................................passed
+Then Connect source as "GCS" and sink as "BigQuery" to establish connection.passed
+Then Save the pipeline......................................................passed
+Then Preview and run the pipeline...........................................passed
+Then Verify the preview of pipeline is "success"............................passed
+Then Close the preview......................................................passed
+Then Deploy the pipeline....................................................passed
+Then Run the Pipeline in Runtime............................................passed
+Then Wait till pipeline is in running state.................................passed
+Then Open and capture logs..................................................passed
+Then Verify the pipeline status is "Succeeded"..............................passed
+Then Get count of no of records transferred to target BigQuery Table........passed
+Then Validate the cmek key "cmekBQ" of target BigQuery table if cmek is enabled.passed
+]]></system-out>
+</testcase>
+<testcase classname="BigQuery source - Verification of BigQuery to GCS successful data transfer" name="Validate successful records transfer from BigQuery to GCS" time="123.094352">
+<system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
+When Source is BigQuery.....................................................passed
+When Sink is GCS............................................................passed
+Then Open BigQuery source properties........................................passed
+Then Enter BigQuery property reference name.................................passed
+Then Enter BigQuery property projectId "projectId"..........................passed
+Then Enter BigQuery property datasetProjectId "projectId"...................passed
+Then Enter BigQuery property dataset "dataset"..............................passed
+Then Enter BigQuery source property table name..............................passed
+Then Enter BiqQuery property encryption key name "cmekBQ" if cmek is enabled.passed
+Then Validate output schema with expectedSchema "bqSourceSchema"............passed
+Then Validate "BigQuery" plugin properties..................................passed
+Then Close the BigQuery properties..........................................passed
+Then Open GCS sink properties...............................................passed
+Then Enter the GCS sink mandatory properties................................passed
+Then Validate "GCS" plugin properties.......................................passed
+Then Close the GCS properties...............................................passed
+Then Connect source as "BigQuery" and sink as "GCS" to establish connection.passed
+Then Save the pipeline......................................................passed
+Then Preview and run the pipeline...........................................passed
+Then Verify the preview of pipeline is "success"............................passed
+Then Click on preview data for GCS sink.....................................passed
+Then Verify preview output schema matches the outputSchema captured in properties.passed
+Then Close the preview data.................................................passed
+Then Deploy the pipeline....................................................passed
+Then Run the Pipeline in Runtime............................................passed
+Then Wait till pipeline is in running state.................................passed
+Then Open and capture logs..................................................passed
+Then Verify the pipeline status is "Succeeded"..............................passed
+Then Verify data is transferred to target GCS bucket........................passed
+]]></system-out>
+</testcase>
+<testcase classname="BigQuery source - Verification of BigQuery to Multiple sinks successful data transfer" name="Validate successful records transfer from BigQuery to multiple sinks (GCS, BigQuery and PubSub)" time="209.346044">
+<system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
+And Wait for page to render properly........................................passed
+When Source is BigQuery.....................................................passed
+When Sink is GCS............................................................passed
+Then Connect source as "BigQuery" having title "BigQuery" and sink1 as "GCS" having title "GCS" to establish connection.passed
+When Sink is BigQuery.......................................................passed
+Then Connect source as "BigQuery" having title "BigQuery" and sink2 as "BigQuery" having title "BigQuery2" to establish connection.passed
+When Sink is PubSub.........................................................passed
+Then Connect source as "BigQuery" having title "BigQuery" and sink3 as "GooglePublisher" having title "Pub/Sub" to establish connection.passed
+Then Open BigQuery source properties........................................passed
+Then Enter the BigQuery source mandatory properties.........................passed
+Then Validate "BigQuery" plugin properties..................................passed
+Then Close the BigQuery properties..........................................passed
+Then Open GCS sink properties...............................................passed
+Then Enter the GCS sink mandatory properties................................passed
+Then Enter GCS property encryption key name "cmekGCS" if cmek is enabled....passed
+Then Validate "GCS" plugin properties.......................................passed
+Then Close the GCS properties...............................................passed
+Then Open BigQuery sink properties..........................................passed
+Then Enter the BigQuery sink mandatory properties...........................passed
+Then Enter BiqQuery property encryption key name "cmekBQ" if cmek is enabled.passed
+Then Validate "BigQuery" plugin properties..................................passed
+Then Close the BigQuery properties..........................................passed
+Then Open the PubSub sink properties........................................passed
+Then Enter the PubSub sink mandatory properties.............................passed
+Then Enter PubSub sink property encryption key name "cmekPubSub" if cmek is enabled.passed
+Then Validate "PubSub" plugin properties....................................passed
+Then Close the PubSub properties............................................passed
+Then Save the pipeline......................................................passed
+Then Preview and run the pipeline...........................................passed
+Then Verify the preview of pipeline is "success"............................passed
+Then Close the preview......................................................passed
+Then Deploy the pipeline....................................................passed
+Then Run the Pipeline in Runtime............................................passed
+Then Wait till pipeline is in running state.................................passed
+Then Open and capture logs..................................................passed
+Then Verify the pipeline status is "Succeeded"..............................passed
+Then Verify data is transferred to target GCS bucket........................passed
+Then Get count of no of records transferred to target BigQuery Table........passed
+Then Validate the cmek key "cmekGCS" of target GCS bucket if cmek is enabled.passed
+Then Validate the cmek key "cmekBQ" of target BigQuery table if cmek is enabled.passed
+Then Validate the cmek key "cmekPubSub" of target PubSub topic if cmek is enabled.passed
+]]></system-out>
+</testcase>
+<testcase classname="GCS sink - Verification of GCS Sink plugin" name="To verify data is getting transferred successfully from BigQuery to GCS" time="118.278289">
+<system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
+When Source is BigQuery.....................................................passed
+When Sink is GCS............................................................passed
+Then Connect source as "BigQuery" and sink as "GCS" to establish connection.passed
+Then Open BigQuery source properties........................................passed
+Then Enter the BigQuery source mandatory properties.........................passed
+Then Validate "BigQuery" plugin properties..................................passed
+Then Close the BigQuery properties..........................................passed
+Then Open GCS sink properties...............................................passed
+Then Enter GCS property projectId and reference name........................passed
+Then Enter GCS sink property path...........................................passed
+Then Select GCS property format "csv".......................................passed
+Then Enter GCS property encryption key name "cmekGCS" if cmek is enabled....passed
+Then Validate "GCS" plugin properties.......................................passed
+Then Close the GCS properties...............................................passed
+Then Save the pipeline......................................................passed
+Then Preview and run the pipeline...........................................passed
+Then Verify the preview of pipeline is "success"............................passed
+Then Close the preview......................................................passed
+Then Deploy the pipeline....................................................passed
+Then Run the Pipeline in Runtime............................................passed
+Then Wait till pipeline is in running state.................................passed
+Then Open and capture logs..................................................passed
+Then Verify the pipeline status is "Succeeded"..............................passed
+Then Verify data is transferred to target GCS bucket........................passed
+Then Validate the cmek key "cmekGCS" of target GCS bucket if cmek is enabled.passed
+]]></system-out>
+</testcase>
+<testcase classname="PubSub-Sink - Verification of BigQuery to PubSub successful data transfer" name="To verify data is getting transferred from BigQuery to PubSub successfully" time="121.302269">
+<system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
+When Source is BigQuery.....................................................passed
+When Sink is PubSub.........................................................passed
+Then Connect source as "BigQuery" and sink as "GooglePublisher" to establish connection.passed
+Then Open BigQuery source properties........................................passed
+Then Enter the BigQuery source mandatory properties.........................passed
+Then Validate "BigQuery" plugin properties..................................passed
+Then Close the BigQuery properties..........................................passed
+Then Open the PubSub sink properties........................................passed
+Then Enter PubSub property projectId "projectId"............................passed
+Then Enter PubSub property reference name...................................passed
+Then Enter PubSub sink property topic name..................................passed
+Then Select PubSub property format "csv"....................................passed
+Then Enter PubSub sink property encryption key name "cmekPubSub" if cmek is enabled.passed
+Then Enter PubSub sink property MaximumBatchCount "pubSubMaximumBatchCount".passed
+Then Enter PubSub sink property MaximumBatchSize "pubSubMaximumBatchSize"...passed
+Then Enter PubSub sink property PublishDelayThreshold "pubSubPublishDelayThreshold".passed
+Then Enter PubSub sink property RetryTimeOut "pubSubRetryTimeOut"...........passed
+Then Enter PubSub sink property ErrorThreshold "pubSubErrorThreshold".......passed
+Then Validate "PubSub" plugin properties....................................passed
+Then Close the PubSub properties............................................passed
+Then Save the pipeline......................................................passed
+Then Preview and run the pipeline...........................................passed
+Then Verify the preview of pipeline is "success"............................passed
+Then Close the preview......................................................passed
+Then Deploy the pipeline....................................................passed
+Then Run the Pipeline in Runtime............................................passed
+Then Wait till pipeline is in running state.................................passed
+Then Verify the pipeline status is "Succeeded"..............................passed
+Then Validate OUT record count is equal to IN record count..................passed
+Then Open and capture logs..................................................passed
+Then Validate the cmek key "cmekPubSub" of target PubSub topic if cmek is enabled.passed
+]]></system-out>
+</testcase>
+<testcase classname="PubSub-Sink - Verification of GCS to PubSub successful data transfer" name="To verify data is getting transferred from GCS to PubSub successfully" time="89.061438">
+<system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
+When Source is GCS..........................................................passed
+When Sink is PubSub.........................................................passed
+Then Open GCS source properties.............................................passed
+Then Enter the GCS source mandatory properties..............................passed
+Then Validate "GCS" plugin properties.......................................passed
+Then Close the GCS properties...............................................passed
+Then Open the PubSub sink properties........................................passed
+Then Enter PubSub property projectId "projectId"............................passed
+Then Enter PubSub property reference name...................................passed
+Then Enter PubSub sink property topic name..................................passed
+Then Select PubSub property format "csv"....................................passed
+Then Enter PubSub sink property encryption key name "cmekPubSub" if cmek is enabled.passed
+Then Enter PubSub sink property MaximumBatchCount "pubSubMaximumBatchCount".passed
+Then Enter PubSub sink property MaximumBatchSize "pubSubMaximumBatchSize"...passed
+Then Enter PubSub sink property PublishDelayThreshold "pubSubPublishDelayThreshold".passed
+Then Enter PubSub sink property RetryTimeOut "pubSubRetryTimeOut"...........passed
+Then Enter PubSub sink property ErrorThreshold "pubSubErrorThreshold".......passed
+Then Validate "PubSub" plugin properties....................................passed
+Then Close the PubSub properties............................................passed
+Then Connect source as "GCS" and sink as "GooglePublisher" to establish connection.passed
+Then Save the pipeline......................................................passed
+Then Preview and run the pipeline...........................................passed
+Then Verify the preview of pipeline is "success"............................passed
+Then Close the preview......................................................passed
+Then Deploy the pipeline....................................................passed
+Then Run the Pipeline in Runtime............................................passed
+Then Wait till pipeline is in running state.................................passed
+Then Verify the pipeline status is "Succeeded"..............................passed
+Then Validate OUT record count is equal to IN record count..................passed
+Then Open and capture logs..................................................passed
+Then Validate the cmek key "cmekPubSub" of target PubSub topic if cmek is enabled.passed
+]]></system-out>
+</testcase>
+</testsuite>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="4" time="148.043688">
+<testcase classname="GCS sink - Verification of GCS Sink plugin" name="To verify data is getting transferred successfully from BigQuery to GCS" time="123.374203">
+<system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
+When Source is BigQuery.....................................................passed
+When Sink is GCS............................................................passed
+Then Connect source as "BigQuery" and sink as "GCS" to establish connection.passed
+Then Open BigQuery source properties........................................passed
+Then Enter the BigQuery source mandatory properties.........................passed
+Then Validate "BigQuery" plugin properties..................................passed
+Then Close the BigQuery properties..........................................passed
+Then Open GCS sink properties...............................................passed
+Then Enter GCS property projectId and reference name........................passed
+Then Enter GCS sink property path...........................................passed
+Then Select GCS property format "csv".......................................passed
+Then Enter GCS property encryption key name "cmekGCS" if cmek is enabled....passed
+Then Validate "GCS" plugin properties.......................................passed
+Then Close the GCS properties...............................................passed
+Then Save the pipeline......................................................passed
+Then Preview and run the pipeline...........................................passed
+Then Verify the preview of pipeline is "success"............................passed
+Then Close the preview......................................................passed
+Then Deploy the pipeline....................................................passed
+Then Run the Pipeline in Runtime............................................passed
+Then Wait till pipeline is in running state.................................passed
+Then Open and capture logs..................................................passed
+Then Verify the pipeline status is "Succeeded"..............................passed
+Then Verify data is transferred to target GCS bucket........................passed
+Then Validate the cmek key "cmekGCS" of target GCS bucket if cmek is enabled.passed
+]]></system-out>
+</testcase>
+<testcase classname="GCS sink - Verify GCS Sink plugin error scenarios" name="Verify GCS Sink properties validation errors for mandatory fields" time="7.994571">
+<system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
+When Sink is GCS............................................................passed
+Then Open GCS sink properties...............................................passed
+Then Enter the GCS properties with blank property "referenceName"...........passed
+Then Validate mandatory property error for "referenceName"..................passed
+]]></system-out>
+</testcase>
+<testcase classname="GCS sink - Verify GCS Sink plugin error scenarios" name="Verify GCS Sink properties validation errors for mandatory fields 2" time="8.615555">
+<system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
+When Sink is GCS............................................................passed
+Then Open GCS sink properties...............................................passed
+Then Enter the GCS properties with blank property "path"....................passed
+Then Validate mandatory property error for "path"...........................passed
+]]></system-out>
+</testcase>
+<testcase classname="GCS sink - Verify GCS Sink plugin error scenarios" name="Verify GCS Sink properties validation errors for mandatory fields 3" time="8.059359">
+<system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
+When Sink is GCS............................................................passed
+Then Open GCS sink properties...............................................passed
+Then Enter the GCS properties with blank property "format"..................passed
+Then Validate mandatory property error for "format".........................passed
+]]></system-out>
+</testcase>
+</testsuite>
