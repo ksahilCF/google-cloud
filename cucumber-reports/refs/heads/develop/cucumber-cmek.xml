@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite failures="1" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="6" time="786.185383">
-<testcase classname="BigQuery sink - Verification of GCS to BigQuery successful data transfer" name="Validate successful records transfer from GCS to BigQuery" time="106.051594">
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="6" time="801.969008">
+<testcase classname="BigQuery sink - Verification of GCS to BigQuery successful data transfer" name="Validate successful records transfer from GCS to BigQuery" time="117.627259">
 <system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
 When Source is GCS..........................................................passed
 When Sink is BigQuery.......................................................passed
@@ -33,7 +33,7 @@ Then Get count of no of records transferred to target BigQuery Table........pass
 Then Validate the cmek key "cmekBQ" of target BigQuery table if cmek is enabled.passed
 ]]></system-out>
 </testcase>
-<testcase classname="BigQuery source - Verification of BigQuery to GCS successful data transfer" name="Validate successful records transfer from BigQuery to GCS" time="127.298177">
+<testcase classname="BigQuery source - Verification of BigQuery to GCS successful data transfer" name="Validate successful records transfer from BigQuery to GCS" time="132.590701">
 <system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
 When Source is BigQuery.....................................................passed
 When Sink is GCS............................................................passed
@@ -66,8 +66,8 @@ Then Verify the pipeline status is "Succeeded"..............................pass
 Then Verify data is transferred to target GCS bucket........................passed
 ]]></system-out>
 </testcase>
-<testcase classname="BigQuery source - Verification of BigQuery to Multiple sinks successful data transfer" name="Validate successful records transfer from BigQuery to multiple sinks (GCS, BigQuery and PubSub)" time="109.139087">
-<failure message="org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document&#10;  (Session info: headless chrome=92.0.4515.159)&#10;For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference&#10;Build info: version: '4.0.0-rc-1', revision: 'bc5511cbda'&#10;System info: host: 'runner-deployment-build-e2e-data-integrations-978f754d-cl9j4', ip: '10.116.6.7', os.name: 'Linux', os.arch: 'amd64', os.version: '5.4.144+', java.version: '1.8.0_292'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [f9cea821e80dd3a5fd89be89e1095235, getElementText {id=891c14a6-ba14-460f-8bda-9ad37f1c9c82}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.159, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: /tmp/.com.google.Chrome.2OX1HI}, goog:chromeOptions: {debuggerAddress: localhost:33213}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:33213/devtoo..., se:cdpVersion: 92.0.4515.159, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Element: [[ChromeDriver: chrome on LINUX (f9cea821e80dd3a5fd89be89e1095235)] -&gt; xpath: //*[@data-cy='valium-banner-hydrator']//span]&#10;Session ID: f9cea821e80dd3a5fd89be89e1095235&#10;&#9;at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)&#10;&#9;at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)&#10;&#9;at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)&#10;&#9;at java.lang.reflect.Constructor.newInstance(Constructor.java:423)&#10;&#9;at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)&#10;&#9;at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)&#10;&#9;at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)&#10;&#9;at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)&#10;&#9;at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)&#10;&#9;at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)&#10;&#9;at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)&#10;&#9;at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:251)&#10;&#9;at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:201)&#10;&#9;at sun.reflect.GeneratedMethodAccessor41.invoke(Unknown Source)&#10;&#9;at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#10;&#9;at java.lang.reflect.Method.invoke(Method.java:498)&#10;&#9;at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)&#10;&#9;at com.sun.proxy.$Proxy22.getText(Unknown Source)&#10;&#9;at stepsdesign.PipelineSteps.verifyThePreviewOfPipelineIs(PipelineSteps.java:156)&#10;&#9;at ✽.Verify the preview of pipeline is &quot;success&quot;(file:src/e2e-test/features/bigquery/source/BigQueryToMultipleSinks.feature:38)&#10;"><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
+<testcase classname="BigQuery source - Verification of BigQuery to Multiple sinks successful data transfer" name="Validate successful records transfer from BigQuery to multiple sinks (GCS, BigQuery and PubSub)" time="216.583459">
+<system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
 And Wait for page to render properly........................................passed
 When Source is BigQuery.....................................................passed
 When Sink is GCS............................................................passed
@@ -97,53 +97,21 @@ Then Validate "PubSub" plugin properties....................................pass
 Then Close the PubSub properties............................................passed
 Then Save the pipeline......................................................passed
 Then Preview and run the pipeline...........................................passed
-Then Verify the preview of pipeline is "success"............................failed
-Then Close the preview......................................................skipped
-Then Deploy the pipeline....................................................skipped
-Then Run the Pipeline in Runtime............................................skipped
-Then Wait till pipeline is in running state.................................skipped
-Then Open and capture logs..................................................skipped
-Then Verify the pipeline status is "Succeeded"..............................skipped
-Then Verify data is transferred to target GCS bucket........................skipped
-Then Get count of no of records transferred to target BigQuery Table........skipped
-Then Validate the cmek key "cmekGCS" of target GCS bucket if cmek is enabled.skipped
-Then Validate the cmek key "cmekBQ" of target BigQuery table if cmek is enabled.skipped
-Then Validate the cmek key "cmekPubSub" of target PubSub topic if cmek is enabled.skipped
-
-StackTrace:
-org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
-  (Session info: headless chrome=92.0.4515.159)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
-Build info: version: '4.0.0-rc-1', revision: 'bc5511cbda'
-System info: host: 'runner-deployment-build-e2e-data-integrations-978f754d-cl9j4', ip: '10.116.6.7', os.name: 'Linux', os.arch: 'amd64', os.version: '5.4.144+', java.version: '1.8.0_292'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f9cea821e80dd3a5fd89be89e1095235, getElementText {id=891c14a6-ba14-460f-8bda-9ad37f1c9c82}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.159, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: /tmp/.com.google.Chrome.2OX1HI}, goog:chromeOptions: {debuggerAddress: localhost:33213}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:33213/devtoo..., se:cdpVersion: 92.0.4515.159, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on LINUX (f9cea821e80dd3a5fd89be89e1095235)] -> xpath: //*[@data-cy='valium-banner-hydrator']//span]
-Session ID: f9cea821e80dd3a5fd89be89e1095235
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:251)
-	at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:201)
-	at sun.reflect.GeneratedMethodAccessor41.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
-	at com.sun.proxy.$Proxy22.getText(Unknown Source)
-	at stepsdesign.PipelineSteps.verifyThePreviewOfPipelineIs(PipelineSteps.java:156)
-	at ✽.Verify the preview of pipeline is "success"(file:src/e2e-test/features/bigquery/source/BigQueryToMultipleSinks.feature:38)
-]]></failure>
+Then Verify the preview of pipeline is "success"............................passed
+Then Close the preview......................................................passed
+Then Deploy the pipeline....................................................passed
+Then Run the Pipeline in Runtime............................................passed
+Then Wait till pipeline is in running state.................................passed
+Then Open and capture logs..................................................passed
+Then Verify the pipeline status is "Succeeded"..............................passed
+Then Verify data is transferred to target GCS bucket........................passed
+Then Get count of no of records transferred to target BigQuery Table........passed
+Then Validate the cmek key "cmekGCS" of target GCS bucket if cmek is enabled.passed
+Then Validate the cmek key "cmekBQ" of target BigQuery table if cmek is enabled.passed
+Then Validate the cmek key "cmekPubSub" of target PubSub topic if cmek is enabled.passed
+]]></system-out>
 </testcase>
-<testcase classname="GCS sink - Verification of GCS Sink plugin" name="To verify data is getting transferred successfully from BigQuery to GCS" time="130.432467">
+<testcase classname="GCS sink - Verification of GCS Sink plugin" name="To verify data is getting transferred successfully from BigQuery to GCS" time="120.249513">
 <system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
 When Source is BigQuery.....................................................passed
 When Sink is GCS............................................................passed
@@ -172,7 +140,7 @@ Then Verify data is transferred to target GCS bucket........................pass
 Then Validate the cmek key "cmekGCS" of target GCS bucket if cmek is enabled.passed
 ]]></system-out>
 </testcase>
-<testcase classname="PubSub-Sink - Verification of BigQuery to PubSub successful data transfer" name="To verify data is getting transferred from BigQuery to PubSub successfully" time="222.141524">
+<testcase classname="PubSub-Sink - Verification of BigQuery to PubSub successful data transfer" name="To verify data is getting transferred from BigQuery to PubSub successfully" time="124.188079">
 <system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
 When Source is BigQuery.....................................................passed
 When Sink is PubSub.........................................................passed
@@ -207,7 +175,7 @@ Then Open and capture logs..................................................pass
 Then Validate the cmek key "cmekPubSub" of target PubSub topic if cmek is enabled.passed
 ]]></system-out>
 </testcase>
-<testcase classname="PubSub-Sink - Verification of GCS to PubSub successful data transfer" name="To verify data is getting transferred from GCS to PubSub successfully" time="91.122534">
+<testcase classname="PubSub-Sink - Verification of GCS to PubSub successful data transfer" name="To verify data is getting transferred from GCS to PubSub successfully" time="90.729997">
 <system-out><![CDATA[Given Open Datafusion Project to configure pipeline.........................passed
 When Source is GCS..........................................................passed
 When Sink is PubSub.........................................................passed
